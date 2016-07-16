@@ -18,6 +18,10 @@ namespace Deveel.OpenAmat.Client {
 
 			Assert.IsNotNull(first);
 			Assert.IsNotNull(first.Name);
+			Assert.IsNotNull(first.Id);
+			Assert.IsNotNull(first.Routes);
+			Assert.IsNotNull(first.Operators);
+			Assert.IsNotNull(first.Geometry);
 		}
 	}
 }

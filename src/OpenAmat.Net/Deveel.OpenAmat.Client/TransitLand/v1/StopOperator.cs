@@ -2,8 +2,8 @@
 
 using Newtonsoft.Json;
 
-namespace Deveel.OpenAmat {
-	public sealed class StopOperator {
+namespace Deveel.OpenAmat.Client.TransitLand.v1 {
+	class StopOperator : IStopOperator {
 		[JsonProperty("operator_name")]
 		public string Name { get; set; }
 

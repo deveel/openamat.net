@@ -46,21 +46,27 @@
     <Compile Include="Deveel.OpenAmat.Client\KnownServiceEndPoints.cs" />
     <Compile Include="Deveel.OpenAmat.Client\OpenAmatClient.cs" />
     <Compile Include="Deveel.OpenAmat.Client\OpenAmatClientSettings.cs" />
-    <Compile Include="Deveel.OpenAmat.Client\RequestAbortedException.cs" />
     <Compile Include="Deveel.OpenAmat.Client\RequestFormat.cs" />
     <Compile Include="Deveel.OpenAmat.Client\SourceType.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\Route.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteGeometry.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RoutesManager.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteStop.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\SchedulesManager.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\Stop.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopGeometry.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopOperator.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopRoute.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopsManager.cs" />
     <Compile Include="Deveel.OpenAmat\GeometryType.cs" />
-    <Compile Include="Deveel.OpenAmat\Route.cs" />
-    <Compile Include="Deveel.OpenAmat\RouteGeometry.cs" />
-    <Compile Include="Deveel.OpenAmat\RouteStop.cs" />
+    <Compile Include="Deveel.OpenAmat\IRoute.cs" />
+    <Compile Include="Deveel.OpenAmat\IRouteGeometry.cs" />
+    <Compile Include="Deveel.OpenAmat\IRouteStop.cs" />
+    <Compile Include="Deveel.OpenAmat\IStop.cs" />
+    <Compile Include="Deveel.OpenAmat\IStopGeometry.cs" />
+    <Compile Include="Deveel.OpenAmat\IStopOperator.cs" />
+    <Compile Include="Deveel.OpenAmat\IStopRoute.cs" />
     <Compile Include="Deveel.OpenAmat\Schedule.cs" />
-    <Compile Include="Deveel.OpenAmat\Stop.cs" />
-    <Compile Include="Deveel.OpenAmat\StopGeometry.cs" />
-    <Compile Include="Deveel.OpenAmat\StopOperator.cs" />
-    <Compile Include="Deveel.OpenAmat\StopRoute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

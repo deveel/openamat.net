@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Deveel.OpenAmat.Client.TransitLand.v1 {
@@ -10,12 +11,25 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 
 		public OpenAmatClient Client { get; private set; }
 
-		public async Task<IList<Route>> ListRoutesAsync() {
-			var result = await Client.GetAsync<RoutesRoot>("routes", queryString: new {operated_by = "o-sqc2-amatpalermospa"});
+		public async Task<IList<IRoute>> ListRoutesAsync() {
+			var result = await Client.GetAsync<RoutesRoot>("routes", queryString: new {
+				operated_by = "o-sqc2-amatpalermospa"
+			});
 			if (result == null)
 				return new Route[0];
 
-			return result.Routes;
+			return result.Routes.Cast<IRoute>().ToList();
+		}
+
+		public async Task<IList<IRoute>> ListByVehicleType(string vehicleType) {
+			var result = await Client.GetAsync<RoutesRoot>("routes", queryString: new {
+				operated_by = "o-sqc2-amatpalermospa",
+				vehicle_type = vehicleType
+			});
+			if (result == null)
+				return new Route[0];
+
+			return result.Routes.Cast<IRoute>().ToList();
 		}
 
 		class RoutesRoot {
