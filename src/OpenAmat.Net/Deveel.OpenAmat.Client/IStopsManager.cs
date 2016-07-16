@@ -8,6 +8,8 @@ namespace Deveel.OpenAmat.Client {
 
 		Task<IStop> FindByIdentifierAsync(string id);
 
-		Task<IList<IStop>> ListByDistance(RangeFilter filter);
+		Task<IStop> FindByOneStopIdAsync(string id);
+
+		Task<IList<IStop>> ListByDistanceAsync(RangeFilter filter);
 	}
 }

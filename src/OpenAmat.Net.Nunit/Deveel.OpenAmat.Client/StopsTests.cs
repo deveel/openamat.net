@@ -42,7 +42,7 @@ namespace Deveel.OpenAmat.Client {
 
 		[TestCase(38.1255002, 13.353526, 200)]
 		public async Task ListByDistance(double lat, double lon, int radius) {
-			var stops = await Client.Stops.ListByDistance(new RangeFilter(lat, lon, radius));
+			var stops = await Client.Stops.ListByDistanceAsync(new RangeFilter(lat, lon, radius));
 
 			Assert.IsNotNull(stops);
 			Assert.IsNotEmpty(stops);
@@ -56,6 +56,17 @@ namespace Deveel.OpenAmat.Client {
 			Assert.IsNotNull(first.Operators);
 			Assert.IsNotNull(first.Geometry);
 			Assert.IsNotNull(first.Identifiers);
+		}
+
+		[TestCase("s-sqc8963wr2-ciaculli~croceverde")]
+		public async Task FindByOneStopId(string id) {
+			var stop = await Client.Stops.FindByOneStopIdAsync(id);
+
+			Assert.IsNotNull(stop);
+			Assert.IsNotNull(stop.OneStopId);
+			Assert.AreEqual(id, stop.OneStopId);
+			Assert.IsNotEmpty(stop.Identifiers);
+			Assert.IsNotNull(stop.Name);
 		}
 	}
 }

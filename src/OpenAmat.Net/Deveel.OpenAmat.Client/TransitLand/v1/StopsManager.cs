@@ -37,7 +37,11 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 			return result.Stops.FirstOrDefault();
 		}
 
-		public async Task<IList<IStop>> ListByDistance(RangeFilter filter) {
+		public async Task<IStop> FindByOneStopIdAsync(string id) {
+			return await Client.GetAsync<Stop>("onestop_id/{id}", new {id});
+		}
+
+		public async Task<IList<IStop>> ListByDistanceAsync(RangeFilter filter) {
 			if (filter == null)
 				throw new ArgumentNullException("filter");
 
