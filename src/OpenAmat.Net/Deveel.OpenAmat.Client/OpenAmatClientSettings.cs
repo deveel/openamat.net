@@ -2,7 +2,7 @@
 
 namespace Deveel.OpenAmat.Client {
 	public sealed class OpenAmatClientSettings {
-		private ClientVersion version;
+		private SourceType sourceType;
 		private Uri baseUrl;
 		private RequestFormat format;
 		private string dateFormat;
@@ -12,7 +12,7 @@ namespace Deveel.OpenAmat.Client {
 		private string authType;
 
 		public OpenAmatClientSettings() {
-			version = ClientVersion.v1a;
+			sourceType = SourceType.Default;
 			format = RequestFormat.Json;
 			dateFormat = "yyyy-MM-ddTHH:mm:ss";
 		}
@@ -23,15 +23,16 @@ namespace Deveel.OpenAmat.Client {
 				if (value == null)
 					throw new ArgumentNullException("value");
 
+				sourceType = SourceType.Custom;
 				baseUrl = value;
 				OnPropertyChanged();
 			}
 		}
 
-		public ClientVersion Version {
-			get { return version; }
+		public SourceType SourceType {
+			get { return sourceType; }
 			set {
-				version = value;
+				sourceType = value;
 				OnPropertyChanged();
 			}
 		}

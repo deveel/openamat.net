@@ -10,8 +10,7 @@ namespace Deveel.OpenAmat.Client {
 		[SetUp]
 		public void SetUp() {
 			Client = new OpenAmatClient(new OpenAmatClientSettings {
-				BaseUrl = new Uri("http://www.weathersicily.it/Amat/API/"),
-				Version = ClientVersion.v1a
+				SourceType = SourceType.TransitLandV1
 			});
 
 			OnSetUp();

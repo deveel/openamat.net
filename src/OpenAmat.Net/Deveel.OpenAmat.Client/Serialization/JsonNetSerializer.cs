@@ -21,7 +21,9 @@ namespace Deveel.OpenAmat.Client.Serialization {
 			_serializer = new Newtonsoft.Json.JsonSerializer {
 				MissingMemberHandling = MissingMemberHandling.Ignore,
 				NullValueHandling = NullValueHandling.Include,
-				DefaultValueHandling = DefaultValueHandling.Include
+				DefaultValueHandling = DefaultValueHandling.Include,
+				ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+				ObjectCreationHandling = ObjectCreationHandling.Auto
 			};
 		}
 
