@@ -105,9 +105,11 @@
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopGeometry.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopOperator.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopRoute.cs" />
+    <Compile Include="Deveel.OpenAmat\ScheduleExtensions.cs" />
     <Compile Include="Deveel.OpenAmat\ScheduleFeatureType.cs" />
     <Compile Include="Deveel.OpenAmat\SchedulePointType.cs" />
     <Compile Include="Deveel.OpenAmat\SortOrder.cs" />
+    <Compile Include="Deveel.OpenAmat\StopExtensions.cs" />
     <Compile Include="Deveel.OpenAmat\StopFeatureType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

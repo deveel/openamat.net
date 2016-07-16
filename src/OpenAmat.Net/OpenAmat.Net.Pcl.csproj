@@ -48,6 +48,7 @@
     <Compile Include="Deveel.OpenAmat.Client\OpenAmatClientSettings.cs" />
     <Compile Include="Deveel.OpenAmat.Client\RequestFormat.cs" />
     <Compile Include="Deveel.OpenAmat.Client\RoutesManagerExtensions.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\ScheduleManagerExtensions.cs" />
     <Compile Include="Deveel.OpenAmat.Client\SourceType.cs" />
     <Compile Include="Deveel.OpenAmat.Client\StopsManagerExtensions.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\PagingUtil.cs" />

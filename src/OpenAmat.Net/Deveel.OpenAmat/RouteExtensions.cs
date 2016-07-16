@@ -17,5 +17,25 @@ namespace Deveel.OpenAmat {
 			var value = route.FeatureValue(RouteFeatureType.LongName);
 			return value == null ? null : (string) value;
 		}
+
+		public static string Description(this IRoute route) {
+			var value = route.FeatureValue(RouteFeatureType.Description);
+			return value == null ? null : (string)value;
+		}
+
+		public static string Url(this IRoute route) {
+			var value = route.FeatureValue(RouteFeatureType.Url);
+			return value == null ? null : (string)value;
+		}
+
+		public static string TextColor(this IRoute route) {
+			var value = route.FeatureValue(RouteFeatureType.TextColor);
+			return value == null ? null : (string)value;
+		}
+
+		public static string Color(this IRoute route) {
+			var value = route.FeatureValue(RouteFeatureType.Color);
+			return value == null ? null : (string)value;
+		}
 	}
 }
