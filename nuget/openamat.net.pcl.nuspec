@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>openamat.net.pcl</id>
+        <version>$version$</version>
+        <title>OpenAmat.Net (Portable)</title>
+        <authors>Deveel,Antonello Provenzano</authors>
+        <owners>deveel,antonello</owners>
+        <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.txt</licenseUrl>
+        <projectUrl>http://github.com/deveel/openamat.net</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/deveel/openamat.net/master/nuget/icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>The Portable .NET Client for the OpenAmat initiative</description>
+        <releaseNotes />
+        <copyright>(c) 2016 Deveel</copyright>
+        <tags>amat openamat deveel rest dotnet palermo pcl portable</tags>
+        <dependencies>
+            <group targetFramework=".NETFramework4.5">
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
+                <dependency id="Microsoft.Net.Http" version="2.2.29" />
+                <dependency id="Microsoft.Bcl" version="1.1.10" />
+                <dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+                <dependency id="DryIoc.dll" version="2.6.3" />
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\dist\OpenAmat.Net.Pcl.dll" target="lib\net45\OpenAmat.Net.Pcl.dll" />
+        <file src="..\dist\OpenAmat.Net.Pcl.pdb" target="lib\net45\OpenAmat.Net.Pcl.pdb" />
+    </files>
+</package>
