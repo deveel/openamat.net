@@ -17,8 +17,24 @@ namespace Deveel.OpenAmat.Client {
 			var first = schedules.FirstOrDefault();
 
 			Assert.IsNotNull(first);
-			Assert.IsNotNull(first.OriginOneStopId);
-			Assert.IsNotNull(first.DestinationOneStopId);
+			Assert.IsNotNull(first.Points);
+			Assert.IsNotEmpty(first.Points);
+			Assert.AreEqual(2, first.Points.Length);
+		}
+
+		[TestCase("r-sqc3q-936")]
+		public async Task ListByOneStopId(string routeId) {
+			var schedules = await Client.Schedules.ListByRouteOneStopeIdAsync(routeId);
+
+			Assert.IsNotNull(schedules);
+			Assert.IsNotEmpty(schedules);
+
+			var first = schedules.FirstOrDefault();
+
+			Assert.IsNotNull(first);
+			Assert.IsNotNull(first.Points);
+			Assert.IsNotEmpty(first.Points);
+			Assert.AreEqual(2, first.Points.Length);
 		}
 	}
 }

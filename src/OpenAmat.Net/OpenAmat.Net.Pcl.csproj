@@ -58,6 +58,8 @@
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteStop.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteTags.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\Schedule.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\ScheduleFeature.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\SchedulePoint.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\SchedulesManager.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\Stop.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopFeature.cs" />
@@ -74,6 +76,8 @@
     <Compile Include="Deveel.OpenAmat\IRouteGeometry.cs" />
     <Compile Include="Deveel.OpenAmat\IRouteStop.cs" />
     <Compile Include="Deveel.OpenAmat\ISchedule.cs" />
+    <Compile Include="Deveel.OpenAmat\IScheduleFeature.cs" />
+    <Compile Include="Deveel.OpenAmat\ISchedulePoint.cs" />
     <Compile Include="Deveel.OpenAmat\IStop.cs" />
     <Compile Include="Deveel.OpenAmat\IStopFeature.cs" />
     <Compile Include="Deveel.OpenAmat\IStopGeometry.cs" />
@@ -83,6 +87,8 @@
     <Compile Include="Deveel.OpenAmat\RangeFilter.cs" />
     <Compile Include="Deveel.OpenAmat\RouteExtensions.cs" />
     <Compile Include="Deveel.OpenAmat\RouteFeatureType.cs" />
+    <Compile Include="Deveel.OpenAmat\ScheduleFeatureType.cs" />
+    <Compile Include="Deveel.OpenAmat\SchedulePointType.cs" />
     <Compile Include="Deveel.OpenAmat\SortOrder.cs" />
     <Compile Include="Deveel.OpenAmat\StopFeatureType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

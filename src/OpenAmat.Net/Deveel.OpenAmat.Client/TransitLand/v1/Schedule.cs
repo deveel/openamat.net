@@ -30,6 +30,18 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 		[JsonProperty("destination_departure_time")]
 		public string DestinationDepartureTime { get; private set; }
 
+		[JsonProperty("origin_dist_traveled")]
+		public double OriginDistanceTraveled { get; set; }
+
+		[JsonProperty("destination_dist_traveled")]
+		public double DestinationDistanceTraveled { get; set; }
+
+		[JsonProperty("origin_timezone")]
+		public string OriginTimeZone { get; set; }
+
+		[JsonProperty("destination_timezone")]
+		public string DestinationTimeZone { get; set; }
+
 		[JsonProperty("service_start_date")]
 		public DateTime ServiceStartDate { get; private set; }
 
@@ -41,6 +53,25 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 
 		[JsonProperty("service_days_of_week")]
 		public bool[] ServiceDaysOfWeek { get; private set; }
+
+		public ISchedulePoint[] Points {
+			get {
+				return new ISchedulePoint[] {
+					new SchedulePoint(SchedulePointType.Origin, OriginOneStopId) {
+						ArrivalTime = OriginArrivalTime,
+						DepartureTime = OriginDepartureTime,
+						TimeZone = OriginTimeZone,
+						DistanceTraveled = OriginDistanceTraveled
+					},
+					new SchedulePoint(SchedulePointType.Destination, DestinationOneStopId) {
+						DepartureTime = DestinationDepartureTime,
+						ArrivalTime = DestinationArrivalTime,
+						TimeZone = DestinationTimeZone,
+						DistanceTraveled = DestinationDistanceTraveled
+					} 
+				};
+			}
+		}
 
 		IDictionary<DayOfWeek, bool> ISchedule.ServiceDaysOfWeek {
 			get {
@@ -57,5 +88,41 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 
 		[JsonProperty("updated_at")]
 		public DateTime UpdatedAt { get; private set; }
+
+		[JsonProperty("wheelchair_accessible")]
+		public string WheelChairAccessible { get; set; }
+
+		[JsonProperty("bikes_allowed")]
+		public string BikesAllowed { get; set; }
+
+		[JsonProperty(("pickup_type"))]
+		public string PickUpType { get; set; }
+
+		[JsonProperty("drop_off_type")]
+		public string DropOffType { get; set; }
+
+		public IList<IScheduleFeature> Features {
+			get {
+				var list = new List<IScheduleFeature>();
+
+				if (!String.IsNullOrEmpty(WheelChairAccessible)) {
+					var value = String.Equals(WheelChairAccessible, "1");
+					list.Add(new ScheduleFeature(ScheduleFeatureType.WheelChairAcessible, value));
+				}
+
+				if (!String.IsNullOrEmpty(BikesAllowed)) {
+					var value = String.Equals(BikesAllowed, "1");
+					list.Add(new ScheduleFeature(ScheduleFeatureType.BikesAllowed, value));
+				}
+
+				if (!String.IsNullOrEmpty(PickUpType))
+					list.Add(new ScheduleFeature(ScheduleFeatureType.PickupType, PickUpType));
+
+				if (!String.IsNullOrEmpty(DropOffType))
+					list.Add(new ScheduleFeature(ScheduleFeatureType.DropOffType, DropOffType));
+
+				return list;
+			}
+		}
 	}
 }
