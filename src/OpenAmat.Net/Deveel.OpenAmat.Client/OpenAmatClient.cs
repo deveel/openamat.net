@@ -166,7 +166,13 @@ namespace Deveel.OpenAmat.Client {
 			return uriBuilder.Uri;
 		}
 
-		private static Dictionary<string, object> GetParameters(object args) {
+		private static IDictionary<string, object> GetParameters(object args) {
+			if (args == null)
+				return new Dictionary<string, object>();
+
+			if (args is IDictionary<string, object>)
+				return (IDictionary<string, object>) args;
+
 			var pairs = new Dictionary<string, object>();
 			if (args != null) {
 #if PCL
