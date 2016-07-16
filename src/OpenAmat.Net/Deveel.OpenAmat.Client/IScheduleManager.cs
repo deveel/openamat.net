@@ -4,6 +4,6 @@ using System.Threading.Tasks;
 
 namespace Deveel.OpenAmat.Client {
 	public interface IScheduleManager {
-		Task<IList<Schedule>> ListSchedulesAsync();
+		Task<IList<ISchedule>> ListSchedulesAsync(Paging paging);
 	}
 }

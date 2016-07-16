@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Deveel.OpenAmat.Client\ClientTestBase.cs" />
     <Compile Include="Deveel.OpenAmat.Client\RoutesTests.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\ScheduleTests.cs" />
     <Compile Include="Deveel.OpenAmat.Client\StopsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

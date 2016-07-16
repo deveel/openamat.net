@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 using Newtonsoft.Json;
 
-namespace Deveel.OpenAmat {
-	public sealed class Schedule {
+namespace Deveel.OpenAmat.Client.TransitLand.v1 {
+	class Schedule : ISchedule {
 		[JsonProperty("origin_onestop_id")]
-		public string OriginStopId { get; private set; }
+		public string OriginOneStopId { get; private set; }
 
 		[JsonProperty("destination_onestop_id")]
-		public string DestinationStopId { get; private set; }
+		public string DestinationOneStopId { get; private set; }
 
 		[JsonProperty("trip")]
 		public string TripId { get; private set; }
@@ -39,6 +41,16 @@ namespace Deveel.OpenAmat {
 
 		[JsonProperty("service_days_of_week")]
 		public bool[] ServiceDaysOfWeek { get; private set; }
+
+		IDictionary<DayOfWeek, bool> ISchedule.ServiceDaysOfWeek {
+			get {
+				if (ServiceDaysOfWeek == null)
+					return new Dictionary<DayOfWeek, bool>();
+
+				return ServiceDaysOfWeek.Select((value, offset) => new {day = (DayOfWeek) offset, value})
+					.ToDictionary(key => key.day, value => value.value);
+			}
+		}
 
 		[JsonProperty("created_at")]
 		public DateTime CreatedAt { get; private set; }
