@@ -8,12 +8,12 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 		public string OperatorName { get; set; }
 
 		[JsonProperty("operator_onestop_id")]
-		public string OperatorId { get; set; }
+		public string OperatorOneStopId { get; set; }
 
 		[JsonProperty("route_name")]
 		public string RouteName { get; set; }
 
 		[JsonProperty("route_onestop_id")]
-		public string RouteId { get; set; }
+		public string RouteOneStopId { get; set; }
 	}
 }

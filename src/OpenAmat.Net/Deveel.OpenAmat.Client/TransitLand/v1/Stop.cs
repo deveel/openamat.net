@@ -10,7 +10,7 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 		public string Name { get; private set; }
 
 		[JsonProperty("onestop_id")]
-		public string Id { get; private set; }
+		public string OneStopId { get; private set; }
 
 		[JsonProperty("tags")]
 		public StopTags Tags { get; private set; }

@@ -4,8 +4,12 @@ using System.Threading.Tasks;
 
 namespace Deveel.OpenAmat.Client {
 	public interface IRoutesManager {
-		Task<IList<IRoute>> ListRoutesAsync();
+		Task<IList<IRoute>> ListRoutesAsync(Paging paging);
 
-		Task<IList<IRoute>> ListByVehicleType(string vehicleType);
+		Task<IList<IRoute>> ListByVehicleTypeAsync(string vehicleType, Paging paging);
+
+		Task<IRoute> FindByIdentifierAsync(string identifier);
+
+		Task<IRoute> FindByOneStopIdAsync(string id);
 	}
 }

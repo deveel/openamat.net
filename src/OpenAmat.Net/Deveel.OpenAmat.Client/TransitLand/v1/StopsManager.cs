@@ -13,27 +13,7 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 		public OpenAmatClient Client { get; private set; }
 
 		public async Task<IList<IStop>> ListStopsAsync(Paging paging) {
-			dynamic expando = new ExpandoObject();
-
-			expando.served_by = "o-sqc2-amatpalermospa";
-
-			if (paging != null) {
-				if (!String.IsNullOrEmpty(paging.SortKey))
-					expando.sort_key = paging.SortKey;
-				if (paging.SortOrder != SortOrder.Default) {
-					if (paging.SortOrder == SortOrder.Ascending) {
-						expando.sort_order = "asc";
-					} else if (paging.SortOrder == SortOrder.Descending) {
-						expando.sort_order = "desc";
-					}
-				}
-				if (paging.Offset >= 0)
-					expando.offset = paging.Offset;
-				if (paging.Count > 0)
-					expando.per_page = paging.Count;
-			}
-
-			var queryString = (IDictionary<string, object>) expando;
+			var queryString = PagingUtil.GetPaging(new {served_by = "o-sqc2-amatpalermospa" }, paging);
 
 			var result = await Client.GetAsync<StopsRoot>("stops", queryString: queryString);
 			if (result == null)

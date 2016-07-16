@@ -167,21 +167,14 @@ namespace Deveel.OpenAmat.Client {
 		}
 
 		private static IDictionary<string, object> GetParameters(object args) {
-			if (args == null)
-				return new Dictionary<string, object>();
-
 			if (args is IDictionary<string, object>)
 				return (IDictionary<string, object>) args;
 
 			var pairs = new Dictionary<string, object>();
 			if (args != null) {
-#if PCL
 				pairs = args.GetType().GetRuntimeProperties()
+					.Where(prop => prop.GetGetMethodOrNull() != null)
 					.ToDictionary(key => key.Name, value => value.GetValue(args));
-#else
-				pairs = args.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
-					.ToDictionary(key => key.Name, value => value.GetValue(args));
-#endif
 			}
 
 			return pairs;

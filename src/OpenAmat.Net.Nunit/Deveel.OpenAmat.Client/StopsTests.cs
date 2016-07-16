@@ -19,7 +19,7 @@ namespace Deveel.OpenAmat.Client {
 
 			Assert.IsNotNull(first);
 			Assert.IsNotNull(first.Name);
-			Assert.IsNotNull(first.Id);
+			Assert.IsNotNull(first.OneStopId);
 			Assert.IsNotNull(first.Routes);
 			Assert.IsNotNull(first.Operators);
 			Assert.IsNotNull(first.Geometry);
@@ -33,8 +33,8 @@ namespace Deveel.OpenAmat.Client {
 			var stop = await Client.Stops.FindByIdentifierAsync(identifier);
 
 			Assert.IsNotNull(stop);
-			Assert.IsNotNull(stop.Id);
-			Assert.AreEqual(expectedId, stop.Id);
+			Assert.IsNotNull(stop.OneStopId);
+			Assert.AreEqual(expectedId, stop.OneStopId);
 			Assert.IsNotEmpty(stop.Identifiers);
 			Assert.Contains(identifier, (ICollection) stop.Identifiers);
 			Assert.IsNotNull(stop.Name);
@@ -51,7 +51,7 @@ namespace Deveel.OpenAmat.Client {
 
 			Assert.IsNotNull(first);
 			Assert.IsNotNull(first.Name);
-			Assert.IsNotNull(first.Id);
+			Assert.IsNotNull(first.OneStopId);
 			Assert.IsNotNull(first.Routes);
 			Assert.IsNotNull(first.Operators);
 			Assert.IsNotNull(first.Geometry);

@@ -47,12 +47,16 @@
     <Compile Include="Deveel.OpenAmat.Client\OpenAmatClient.cs" />
     <Compile Include="Deveel.OpenAmat.Client\OpenAmatClientSettings.cs" />
     <Compile Include="Deveel.OpenAmat.Client\RequestFormat.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\RoutesManagerExtensions.cs" />
     <Compile Include="Deveel.OpenAmat.Client\SourceType.cs" />
     <Compile Include="Deveel.OpenAmat.Client\StopsManagerExtensions.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\PagingUtil.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\Route.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteFeature.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteGeometry.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RoutesManager.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteStop.cs" />
+    <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\RouteTags.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\SchedulesManager.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\Stop.cs" />
     <Compile Include="Deveel.OpenAmat.Client\TransitLand\v1\StopFeature.cs" />
@@ -65,6 +69,7 @@
     <Compile Include="Deveel.OpenAmat\DistanceUnit.cs" />
     <Compile Include="Deveel.OpenAmat\GeometryType.cs" />
     <Compile Include="Deveel.OpenAmat\IRoute.cs" />
+    <Compile Include="Deveel.OpenAmat\IRouteFeature.cs" />
     <Compile Include="Deveel.OpenAmat\IRouteGeometry.cs" />
     <Compile Include="Deveel.OpenAmat\IRouteStop.cs" />
     <Compile Include="Deveel.OpenAmat\IStop.cs" />
@@ -74,6 +79,8 @@
     <Compile Include="Deveel.OpenAmat\IStopRoute.cs" />
     <Compile Include="Deveel.OpenAmat\Paging.cs" />
     <Compile Include="Deveel.OpenAmat\RangeFilter.cs" />
+    <Compile Include="Deveel.OpenAmat\RouteExtensions.cs" />
+    <Compile Include="Deveel.OpenAmat\RouteFeatureType.cs" />
     <Compile Include="Deveel.OpenAmat\Schedule.cs" />
     <Compile Include="Deveel.OpenAmat\SortOrder.cs" />
     <Compile Include="Deveel.OpenAmat\StopFeatureType.cs" />

@@ -2,7 +2,7 @@
 
 namespace Deveel.OpenAmat {
 	public interface IRouteStop {
-		string Id { get; }
+		string OneStopId { get; }
 
 		string Name { get; }
 	}

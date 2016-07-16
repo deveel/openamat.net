@@ -5,7 +5,7 @@ namespace Deveel.OpenAmat {
 	public interface IStop {
 		string Name { get; }
 
-		string Id { get; }
+		string OneStopId { get; }
 
 		IList<string> Identifiers { get; }
 			
