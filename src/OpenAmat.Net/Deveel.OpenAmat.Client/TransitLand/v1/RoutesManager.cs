@@ -21,10 +21,10 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 			return result.Routes.Cast<IRoute>().ToList();
 		}
 
-		public async Task<IList<IRoute>> ListByVehicleTypeAsync(string vehicleType, Paging paging) {
+		public async Task<IList<IRoute>> ListByVehicleTypeAsync(VehicleType vehicleType, Paging paging) {
 			var queryString = PagingUtil.GetPaging(new {
 				operated_by = "o-sqc2-amatpalermospa",
-				vehicle_type = vehicleType
+				vehicle_type = vehicleType.ToString().ToLowerInvariant()
 			}, paging);
 
 			var result = await Client.GetAsync<RoutesRoot>("routes", queryString: queryString);

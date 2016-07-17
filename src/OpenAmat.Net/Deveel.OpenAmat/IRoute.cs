@@ -7,7 +7,7 @@ namespace Deveel.OpenAmat {
 
 		string OneStopId { get; }
 
-		string VeihcleType { get; }
+		VehicleType VeihcleType { get; }
 
 		IList<string> Identifiers { get; }
 			

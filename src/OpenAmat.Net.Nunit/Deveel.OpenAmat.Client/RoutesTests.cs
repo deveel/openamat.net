@@ -25,8 +25,8 @@ namespace Deveel.OpenAmat.Client {
 			Assert.IsNotEmpty(first.Stops);
 		}
 
-		[TestCase("bus")]
-		public async Task ListRoutesByVehicleType(string vehicleType) {
+		[TestCase(VehicleType.Bus)]
+		public async Task ListRoutesByVehicleType(VehicleType vehicleType) {
 			var routes = await Client.Routes.ListByVehicleTypeAsync(vehicleType);
 
 			Assert.IsNotNull(routes);

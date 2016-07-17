@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 	 class Route : IRoute {
@@ -22,7 +23,8 @@ namespace Deveel.OpenAmat.Client.TransitLand.v1 {
 		public RouteGeometry Geometry { get; private set; }
 
 		[JsonProperty("vehicle_type")]
-		public string VeihcleType { get; private set; }
+		[JsonConverter(typeof(StringEnumConverter))]
+		public VehicleType VeihcleType { get; private set; }
 
 		[JsonProperty("tags")]
 		public RouteTags Tags { get; set; }

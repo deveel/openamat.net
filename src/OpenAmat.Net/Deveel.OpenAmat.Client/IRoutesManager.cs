@@ -6,7 +6,7 @@ namespace Deveel.OpenAmat.Client {
 	public interface IRoutesManager {
 		Task<IList<IRoute>> ListRoutesAsync(Paging paging);
 
-		Task<IList<IRoute>> ListByVehicleTypeAsync(string vehicleType, Paging paging);
+		Task<IList<IRoute>> ListByVehicleTypeAsync(VehicleType vehicleType, Paging paging);
 
 		Task<IRoute> FindByIdentifierAsync(string identifier);
 

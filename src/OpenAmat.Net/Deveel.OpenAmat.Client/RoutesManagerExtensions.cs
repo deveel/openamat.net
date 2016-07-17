@@ -10,7 +10,7 @@ namespace Deveel.OpenAmat.Client {
 			return await manager.ListRoutesAsync(new Paging());
 		}
 
-		public static async Task<IList<IRoute>> ListByVehicleTypeAsync(this IRoutesManager manager, string vehicleType) {
+		public static async Task<IList<IRoute>> ListByVehicleTypeAsync(this IRoutesManager manager, VehicleType vehicleType) {
 			return await manager.ListByVehicleTypeAsync(vehicleType, new Paging());
 		}
 
@@ -22,11 +22,11 @@ namespace Deveel.OpenAmat.Client {
 			return manager.ListRoutes(new Paging());
 		}
 
-		public static IList<IRoute> ListByVehicleType(this IRoutesManager manager, string vehicleType) {
+		public static IList<IRoute> ListByVehicleType(this IRoutesManager manager, VehicleType vehicleType) {
 			return ListByVehicleType(manager, vehicleType, new Paging());
 		}
 
-		public static IList<IRoute> ListByVehicleType(this IRoutesManager manager, string vehicleType, Paging paging) {
+		public static IList<IRoute> ListByVehicleType(this IRoutesManager manager, VehicleType vehicleType, Paging paging) {
 			return manager.ListByVehicleTypeAsync(vehicleType, paging).RunSync();
 		}
 	}

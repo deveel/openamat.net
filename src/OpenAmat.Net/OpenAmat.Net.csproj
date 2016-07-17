@@ -111,6 +111,7 @@
     <Compile Include="Deveel.OpenAmat\SortOrder.cs" />
     <Compile Include="Deveel.OpenAmat\StopExtensions.cs" />
     <Compile Include="Deveel.OpenAmat\StopFeatureType.cs" />
+    <Compile Include="Deveel.OpenAmat\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
